@@ -120,10 +120,24 @@ Now, if you switch back to the primary branch and make some more commits, your n
   <p>If you only want to keep track of your code locally, you don't need to use GitHub. But if you want to work with a team, you can use GitHub to collaboratively modify the project's code.
 
 To create a new repo on GitHub, log in and go to the GitHub home page. You can find the “New repository” option under the “+” sign next to your profile picture, in the top right corner of the navbar:
-    <br>After clicking the button, GitHub will ask you to name your repo and provide a brief description:</p>
-  <img src="img/Git_2.png" alt="">
-
+    <br>After clicking the button, GitHub will ask you to name your repo and provide a brief description:
+  When you're done filling out the information, press the 'Create repository' button to make your new repo.
+  <img src="img/Git_2.png" alt="Github Create a repository">
+GitHub will ask if you want to create a new repo from scratch or if you want to add a repo you have created locally. In this case, since we've already created a new repo locally, we want to push that onto GitHub so follow the '....or push an existing repository from the command line' section: </p>
 </div>
+<h2>Step 7: Push a branch to GitHub</h2>
+<p>Now we'll push the commit in your branch to your new GitHub repo. This allows other people to see the changes you've made. If they're approved by the repository's owner, the changes can then be merged into the primary branch.
+
+To push changes onto a new branch on GitHub, you'll want to run git push origin yourbranchname. GitHub will automatically create the branch for you on the remote repository: <img src="img/Git_Push.png" alt="">You might be wondering what that "origin" word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called "origin." It's essentially shorthand for the remote repository's URL. So, to push your changes to the remote repository, you could've used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname
+(If this is your first time using GitHub locally, it might prompt you to log in with your GitHub username and password.)
+If you refresh the GitHub page, you'll see note saying a branch with your name has just been pushed into the repository. You can also click the 'branches' link to see your branch listed there.
+  <img src="img/Git_3.jpeg" alt="New branch">Now click the green button in the screenshot above. We're going to make a pull request!</p>
+<h2>Step 8: Create a pull request (PR)</h2>
+<p>A pull request (or PR) is a way to alert a repo's owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the primary branch.
+
+This is what the PR page looks like before you've submitted it: <img src="img/Git_4.jpeg" alt=""></p>
+
+
 <!-- Add your site or application content here -->
 <!--  <script src="js/vendor/modernizr-3.11.2.min.js"></script>-->
 <!--  <script src="js/plugins.js"></script>-->
