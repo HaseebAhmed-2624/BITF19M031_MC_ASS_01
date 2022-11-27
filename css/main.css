@@ -16,7 +16,24 @@ html {
   font-size: 1em;
   line-height: 1.4;
 }
-
+body{
+  background:black;
+}
+*{
+  color:white;
+}
+img{
+  margin:auto;
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+}
+h2{
+  padding-left:1rem;
+  background-color: darkgreen;
+  border-radius:10px ;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
