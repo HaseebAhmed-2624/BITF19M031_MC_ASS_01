@@ -66,27 +66,62 @@
     command we aren't going to do anything with it."</p>
   <h3>An interlude: The staging environment, the commit, and you</h3>
   <p>One of the most confusing parts when you're first learning git is the concept of the staging environment and how it
-    relates to a commit. A commit is a record of what changes you have made since the last time you made a commit. Essentially, you make
+    relates to a commit. A commit is a record of what changes you have made since the last time you made a commit.
+    Essentially, you make
     changes to your repo (for example, adding a file or modifying one) and then tell git to put those changes into a
-    commit. Commits make up the essence of your project and allow you to jump to the state of a project at any other commit.
+    commit. Commits make up the essence of your project and allow you to jump to the state of a project at any other
+    commit.
     So, how do you tell git which files to put into a commit? This is where the staging environment or index come in. As
     seen in Step 2, when you make changes to your repo, git notices that a file has changed but won't do anything with
-    it (like adding it in a commit). To add a file to a commit, you first need to add it to the staging environment. To do this, you can use the git add
+    it (like adding it in a commit). To add a file to a commit, you first need to add it to the staging environment. To
+    do this, you can use the git add
     command.
-      Once you've used the git add command to add all the files you want to the staging environment, you can then tell
-      git to package them into a commit using the git commit command.
-      Note: The staging environment, also called 'staging', is the new preferred term for this, but you can also see it
-      referred to as the 'index'.
+    Once you've used the git add command to add all the files you want to the staging environment, you can then tell
+    git to package them into a commit using the git commit command.
+    Note: The staging environment, also called 'staging', is the new preferred term for this, but you can also see it
+    referred to as the 'index'.
   </p>
-<h2>Step 3: Add a file to the staging environment</h2>
+  <h2>Step 3: Add a file to the staging environment</h2>
   <p>Add a file to the staging environment using the git add command.
 
-If you rerun the git status command, you'll see that git has added the file to the staging environment (notice the "Changes to be committed" line).
+    If you rerun the git status command, you'll see that git has added the file to the staging environment (notice the
+    "Changes to be committed" line).
     <br>To reiterate, the file has not yet been added to a commit, but it's about to be.</p>
   <h3>Step 4: Create a commit</h3>
   <p>It's time to create your first commit! Run the command git commit -m "Your message about the commit"</p>
-<p>The message at the end of the commit should be something related to what the commit contains - maybe it's a new feature, maybe it's a bug fix, maybe it's just fixing a typo. Don't put a message like "asdfadsf" or "foobar". That makes the other people who see your commit sad. Very, very, sad. Commits live forever in a repository (technically you can delete them if you really, really need to but it’s messy), so if you leave a clear explanation of your changes it can be extremely helpful for future programmers (perhaps future you!) who are trying to figure out why some change was made years later.</p>
+  <p>The message at the end of the commit should be something related to what the commit contains - maybe it's a new
+    feature, maybe it's a bug fix, maybe it's just fixing a typo. Don't put a message like "asdfadsf" or "foobar". That
+    makes the other people who see your commit sad. Very, very, sad. Commits live forever in a repository (technically
+    you can delete them if you really, really need to but it’s messy), so if you leave a clear explanation of your
+    changes it can be extremely helpful for future programmers (perhaps future you!) who are trying to figure out why
+    some change was made years later.</p>
   <h3>Step 5: Create a new branch</h3>
+  <p>Now that you've made a new commit, let's try something a little more advanced.
+    Say you want to make a new feature but are worried about making changes to the main project while developing the
+    feature. This is where git branches come in.
+    Branches allow you to move back and forth between 'states' of a project. Official git docs describe branches this
+    way: ‘A branch in Git is simply a lightweight movable pointer to one of these commits.’ For instance, if you want to
+    add a new page to your website you can create a new branch just for that page without affecting the main part of the
+    project. Once you're done with the page, you can merge your changes from your branch into the primary branch. When
+    you create a new branch, Git keeps track of which commit your branch 'branched' off of, so it knows the history
+    behind all the files.
+    Let's say you are on the primary branch and want to create a new branch to develop your web page. Here's what you'll
+    do: Run git checkout -b
+    <my branch name>. This command will automatically create a new branch and then 'check you out' on it, meaning git
+      will move you to that branch, off of the primary branch.
+      After running the above command, you can use the git branch command to confirm that your branch was created:
+      <br>The branch name with the asterisk next to it indicates which branch you're on at that given time.
+  </p>
+  <h3>A note on branch names</h3>
+  <p>By default, every git repository’s first branch is named `master` (and is typically used as the primary branch in the project). As part of the tech industry’s general anti-racism work, some groups have begun to use alternate names for the default branch (we are using “primary” in this tutorial, for example). In other documentation and discussions, you may see “master”, or other terms, used to refer to the primary branch. Regardless of the name, just keep in mind that nearly every repository has a primary branch that can be thought of as the official version of the repository. If it’s a website, then the primary branch is the version that users see. If it’s an application, then the primary branch is the version that users download. This isn’t technically necessary (git doesn’t treat any branches differently from other branches), but it’s how git is traditionally used in a project.
+If you are curious about the decision to use different default branch names, GitHub has an explanation of their change here: https://github.com/github/renaming
+Now, if you switch back to the primary branch and make some more commits, your new branch won't see any of those changes until you merge those changes onto your new branch.</p>
+<h2>Step 6: Create a new repository on GitHub</h2>
+  <p>If you only want to keep track of your code locally, you don't need to use GitHub. But if you want to work with a team, you can use GitHub to collaboratively modify the project's code.
+
+To create a new repo on GitHub, log in and go to the GitHub home page. You can find the “New repository” option under the “+” sign next to your profile picture, in the top right corner of the navbar:
+    <br>After clicking the button, GitHub will ask you to name your repo and provide a brief description:</p>
+
 
 </div>
 <!-- Add your site or application content here -->
